@@ -15,10 +15,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSubmit(View view) {
-        TextView scoreText = (TextView)findViewById(R.id.gradeView);
+        TextView gradeText = (TextView)findViewById(R.id.gradeView);
 
         String grade = "B";
-        scoreText.setText(grade);
+        gradeText.setText(grade);
+
+        gradeText.setVisibility(View.VISIBLE);
+
+        TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
+        gradeCaption.setVisibility(View.VISIBLE);
     }
+
 
 }
