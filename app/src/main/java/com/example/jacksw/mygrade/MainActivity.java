@@ -19,17 +19,23 @@ public class MainActivity extends AppCompatActivity {
 
         Integer score = getScore();
 
+        String grade = convertScoreToGrade(score);
+
+        TextView gradeText = (TextView)findViewById(R.id.gradeView);
+        gradeText.setText(grade);
+
+        gradeText.setVisibility(View.VISIBLE);
+        TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
+        gradeCaption.setVisibility(View.VISIBLE);
+    }
+
+    @NonNull
+    private String convertScoreToGrade(Integer score) {
         String grade = "F";
         if(score >= 90){
             grade = "A";
         }
-
-        TextView gradeText = (TextView)findViewById(R.id.gradeView);
-        gradeText.setText(grade);
-        gradeText.setVisibility(View.VISIBLE);
-
-        TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
-        gradeCaption.setVisibility(View.VISIBLE);
+        return grade;
     }
 
     @NonNull
