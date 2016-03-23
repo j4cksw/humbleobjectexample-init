@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.GradeDisplay;
+
+public class MainActivity extends AppCompatActivity implements GradeDisplay {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @NonNull
-    private Integer getScore() {
+    public Integer getScore() {
         EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
         return Integer.parseInt(scoreInput.getText().toString());
     }
