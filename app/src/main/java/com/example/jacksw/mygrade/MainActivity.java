@@ -1,5 +1,6 @@
 package com.example.jacksw.mygrade;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSubmit(View view) {
 
-        EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
-        Integer score = Integer.parseInt(scoreInput.getText().toString());
+        Integer score = getScore();
 
         String grade = "F";
         if(score >= 90){
@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
         gradeCaption.setVisibility(View.VISIBLE);
+    }
+
+    @NonNull
+    private Integer getScore() {
+        EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
+        return Integer.parseInt(scoreInput.getText().toString());
     }
 
 
