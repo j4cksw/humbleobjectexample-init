@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @NonNull
+    private Integer getScore() {
+        EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
+        return Integer.parseInt(scoreInput.getText().toString());
+    }
+
+    @NonNull
     private String convertScoreToGrade(Integer score) {
         String grade = "F";
         if(score >= 90){
             grade = "A";
         }
         return grade;
-    }
-
-    @NonNull
-    private Integer getScore() {
-        EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
-        return Integer.parseInt(scoreInput.getText().toString());
     }
 
 
