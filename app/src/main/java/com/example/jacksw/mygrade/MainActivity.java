@@ -16,17 +16,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSubmit(View view) {
-
         Integer score = getScore();
-
         String grade = convertScoreToGrade(score);
-
-        TextView gradeText = (TextView)findViewById(R.id.gradeView);
-        gradeText.setText(grade);
-
-        gradeText.setVisibility(View.VISIBLE);
-        TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
-        gradeCaption.setVisibility(View.VISIBLE);
+        setScore(grade);
     }
 
     @NonNull
@@ -42,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
             grade = "A";
         }
         return grade;
+    }
+
+    private void setScore(String grade) {
+        TextView gradeText = (TextView)findViewById(R.id.gradeView);
+        gradeText.setText(grade);
+
+        gradeText.setVisibility(View.VISIBLE);
+        TextView gradeCaption = (TextView)findViewById(R.id.gradeCaption);
+        gradeCaption.setVisibility(View.VISIBLE);
     }
 
 
