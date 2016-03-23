@@ -16,8 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSubmit(View view) {
 
-        String grade = "B";
-        
+        EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
+        Integer score = Integer.parseInt(scoreInput.getText().toString());
+
+        String grade = "F";
+        if(score >= 90){
+            grade = "A";
+        }
+
         TextView gradeText = (TextView)findViewById(R.id.gradeView);
         gradeText.setText(grade);
         gradeText.setVisibility(View.VISIBLE);
