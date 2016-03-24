@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements GradeDisplay {
     public void onSubmit(View view) {
         Integer score = getScore();
         String grade = convertScoreToGrade(score);
-        setScore(grade);
+        setGrade(grade);
     }
 
     @NonNull
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements GradeDisplay {
         return grade;
     }
 
-    private void setScore(String grade) {
+    public void setGrade(String grade) {
         TextView gradeText = (TextView)findViewById(R.id.gradeView);
         gradeText.setText(grade);
 

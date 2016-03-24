@@ -15,4 +15,16 @@ public class MyGradeControllerTest {
 
         Mockito.verify(mockedDisplay).getScore();
     }
+
+    @Test
+    public void onSubmit_score_greater_than_89_should_show_grade_A(){
+        GradeDisplay mockedDisplay = Mockito.mock(GradeDisplay.class);
+        Mockito.when(mockedDisplay.getScore()).thenReturn(90);
+
+        MyGradeController controller = new MyGradeController(mockedDisplay);
+
+        controller.onSubmit();
+
+        Mockito.verify(mockedDisplay).setGrade("A");
+    }
 }
