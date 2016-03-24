@@ -1,13 +1,18 @@
-import org.junit.Assert;
-import org.junit.Test;
+import com.example.GradeDisplay;
+import com.example.MyGradeController;
 
-/**
- * Created by JackSW on 3/23/2016 AD.
- */
+import org.junit.Test;
+import org.mockito.Mockito;
+
 public class MyGradeControllerTest {
 
     @Test
     public void onSubmit_should_call_getScore_from_activity(){
-        Assert.fail("Not yet implemented");
+        GradeDisplay mockedDisplay = Mockito.mock(GradeDisplay.class);
+        MyGradeController controller = new MyGradeController(mockedDisplay);
+
+        controller.onSubmit();
+
+        Mockito.verify(mockedDisplay).getScore();
     }
 }
