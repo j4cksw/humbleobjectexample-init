@@ -8,8 +8,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.GradeDisplay;
+import com.example.MyGradeController;
 
 public class MainActivity extends AppCompatActivity implements GradeDisplay {
+
+    MyGradeController controller = new MyGradeController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,24 +21,13 @@ public class MainActivity extends AppCompatActivity implements GradeDisplay {
     }
 
     public void onSubmit(View view) {
-        Integer score = getScore();
-        String grade = convertScoreToGrade(score);
-        setGrade(grade);
+        this.controller.onSubmit();
     }
 
     @NonNull
     public Integer getScore() {
         EditText scoreInput = (EditText)findViewById(R.id.scoreInput);
         return Integer.parseInt(scoreInput.getText().toString());
-    }
-
-    @NonNull
-    private String convertScoreToGrade(Integer score) {
-        String grade = "F";
-        if(score >= 90){
-            grade = "A";
-        }
-        return grade;
     }
 
     public void setGrade(String grade) {
