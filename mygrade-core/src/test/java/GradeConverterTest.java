@@ -1,3 +1,5 @@
+import com.example.GradeConverter;
+
 import org.junit.Assert;
 import org.junit.Test;
 
