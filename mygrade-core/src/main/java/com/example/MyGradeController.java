@@ -9,6 +9,16 @@ public class MyGradeController {
     }
 
     public void onSubmit(){
-        this.display.getScore();
+        Integer score = this.display.getScore();
+        String grade = this.convertScoreToGrade(score);
+        this.display.setGrade(grade);
+    }
+
+    private String convertScoreToGrade(Integer score) {
+        String grade = "F";
+        if(score >= 90){
+            grade = "A";
+        }
+        return grade;
     }
 }
