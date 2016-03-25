@@ -22,7 +22,7 @@ public class GradeConverter {
 
     private Map<Integer, String> getConversionRules() {
         Map<Integer, String> rules = new LinkedHashMap<>();
-        
+
         rules.put(80, "A");
         rules.put(70, "B");
         rules.put(60, "C");
