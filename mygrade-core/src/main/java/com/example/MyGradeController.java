@@ -4,21 +4,19 @@ public class MyGradeController {
 
     private GradeDisplay display;
 
+    private GradeConverter converter = new GradeConverter();
+
     public MyGradeController(GradeDisplay display){
         this.display = display;
     }
 
     public void onSubmit(){
         Integer score = this.display.getScore();
-        String grade = this.convertScoreToGrade(score);
+        String grade = this.converter.fromScore(score);
         this.display.setGrade(grade);
     }
 
-    private String convertScoreToGrade(Integer score) {
-        String grade = "F";
-        if(score >= 90){
-            grade = "A";
-        }
-        return grade;
+    public void setGradeConverter(GradeConverter converter) {
+        this.converter = converter;
     }
 }

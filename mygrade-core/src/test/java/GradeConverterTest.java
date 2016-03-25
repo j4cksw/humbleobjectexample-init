@@ -11,4 +11,11 @@ public class GradeConverterTest {
 
         Assert.assertEquals(converter.fromScore(90), "A");
     }
+
+    @Test
+    public void convertFromScore_given_0_shouldReturn_F() {
+        GradeConverter converter = new GradeConverter();
+
+        Assert.assertEquals(converter.fromScore(0), "F");
+    }
 }
