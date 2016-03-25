@@ -8,6 +8,9 @@ public class GradeConverter {
         if(score >= 90){
             grade = "A";
         }
+        else if(score >= 50){
+            grade = "D";
+        }
         return grade;
     }
 }

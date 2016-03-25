@@ -18,4 +18,11 @@ public class GradeConverterTest {
 
         Assert.assertEquals(converter.fromScore(0), "F");
     }
+
+    @Test
+    public void fromScore_given_50_shouldReturn_D() {
+        GradeConverter converter = new GradeConverter();
+
+        Assert.assertEquals(converter.fromScore(50), "D");
+    }
 }
