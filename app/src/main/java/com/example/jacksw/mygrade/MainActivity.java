@@ -39,5 +39,4 @@ public class MainActivity extends AppCompatActivity implements GradeDisplay {
         gradeCaption.setVisibility(View.VISIBLE);
     }
 
-
 }
